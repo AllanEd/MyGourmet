@@ -6,6 +6,20 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from "@angular/common/http";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { RezepteProvider } from '../providers/rezepte/rezepte';
+
+var FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDpTxhpFavnh7QtCH2YfME6TnDvy2cGasY",
+  authDomain: "mygourmet-1524825386092.firebaseapp.com",
+  databaseURL: "https://mygourmet-1524825386092.firebaseio.com",
+  projectId: "mygourmet-1524825386092",
+  storageBucket: "",
+  messagingSenderId: "81313999421"
+};
+
 
 @NgModule({
   declarations: [
@@ -14,7 +28,10 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -23,7 +40,8 @@ import {HttpClientModule} from "@angular/common/http";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RezepteProvider
   ]
 })
 export class AppModule {}

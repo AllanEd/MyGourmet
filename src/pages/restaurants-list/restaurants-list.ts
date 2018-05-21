@@ -1,7 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-
-
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 declare var google;
 let map: any;
@@ -21,22 +19,21 @@ export class RestaurantsListPage {
 
   @ViewChild('map') mapElement: ElementRef;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
- platform.ready().then(()=>{
-   this.initMap();
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   cameraButton(){
     this.navCtrl.push('ArRestaurantPage');
   }
 
- /* ionViewDidLoad() {
+  ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantsListPage');
     navigator.geolocation.getCurrentPosition((pos) => {
       console.log(pos);
+      this.initMap();
     });
-  }*/
+  }
   initMap() {
     navigator.geolocation.getCurrentPosition((location) => {
       console.log(location);
@@ -50,7 +47,7 @@ export class RestaurantsListPage {
       service.nearbySearch({
         location: {lat: location.coords.latitude, lng: location.coords.longitude},
         radius: 1000,
-        type: ['store']
+        type: ['restaurant']
       }, (results,status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
@@ -81,8 +78,7 @@ export class RestaurantsListPage {
     google.maps.event.addListener(marker, 'click', function() {
       //infowindow.setContent(place.name);
       infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-        'Place ID: ' + place.place_id + '<br>' +
-        place.vicinity + '</div>');
+        'Wertung: ' + place.rating + '<br>' +place.vicinity + '<br>' + "Passendes Rezept" +'</div>');
       infowindow.open(map, this);
     });
   }

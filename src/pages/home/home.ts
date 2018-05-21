@@ -22,4 +22,8 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
+  recipeButton(){
+    this.navCtrl.push('RezepteTestPage');
+  }
+
 }

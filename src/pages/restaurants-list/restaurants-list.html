@@ -4,18 +4,10 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Restaurants in der Nähe</ion-title>
-    <button ion-button (click)="cameraButton()" class="button-restaurant">AR</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="start">
-  <ion-list class="list">
-    <!--<ion-item *ngFor="let restaurant of restaurants">-->
-    <h2>Restaurant</h2>
-    <p>Art des Restaurants</p>
-    <!-- </ion-item>-->
-    <div #map id="map"></div>
-  </ion-list>
-
+  <div #map id="map"></div>
 </ion-content>
 

@@ -1,0 +1,37 @@
+// Recipes
+{
+  "name": "Spaghetti Bolognese",
+  "typ": "italienisch",
+  "zutaten": [
+    "600g ",
+    "800g rockmelon, chopped",
+    "800g seedless watermelon, chopped",
+    "250g strawberries, hulled, quartered",
+    "200g seedless green grapes",
+    "200g seedless red grapes",
+    "4 passionfruit, halved",
+    "1 tablespoon lime juice"
+  ],
+  "instructions": [
+    "Place pineapple, rockmelon, watermelon, strawberries, grapes, passionfruit pulp and lime juice in a large glass or ceramic bowl.",
+    "Toss to combine.",
+    "Serve."
+  ],
+  "totalTime": {
+    "iso": "PT15M",
+    "en": "15 minutes"
+  },
+  "prepTime": {
+    "iso": "PT15M",
+    "en": "15 minutes"
+  },
+  "cookTime": {
+    "iso": "PT0M",
+    "en": "0 minutes"
+  },
+  "copyrighted": {
+    "image": "http://img.taste.com.au/jhfQX3Eq/taste/2016/11/traditional-fruit-salad-60324-1.jpeg",
+    "description": "Make the most of seasonal fruits in this traditional fruit salad."
+  }
+}
+}
