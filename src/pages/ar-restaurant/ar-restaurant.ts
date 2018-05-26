@@ -44,7 +44,7 @@ export class ArRestaurantPage {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       ARController.getUserMediaThreeScene({
         maxARVideoSize: 640,
-        facingMode: 'environment', //'user' for front camera 'environment' for back
+        // facingMode: 'environment', //'user' for front camera 'environment' for back
         cameraParam: 'assets/data/camera_para.dat',
         onSuccess: (arScene: ARThreeScene, arController, arCamera) => {
           arController.setPatternDetectionMode(artoolkit.AR_TEMPLATE_MATCHING_MONO_AND_MATRIX);

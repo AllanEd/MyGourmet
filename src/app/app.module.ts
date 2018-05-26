@@ -9,7 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import { AngularFireDatabaseModule } from "angularfire2/database";
-import { RezepteProvider } from '../providers/rezepte/rezepte';
+import { RestProvider } from '../providers/rest/rest';
 
 var FIREBASE_CONFIG = {
   apiKey: "AIzaSyDpTxhpFavnh7QtCH2YfME6TnDvy2cGasY",
@@ -41,7 +41,7 @@ var FIREBASE_CONFIG = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RezepteProvider
+    RestProvider
   ]
 })
 export class AppModule {}
